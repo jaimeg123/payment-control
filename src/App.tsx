@@ -17,7 +17,7 @@ const PAYMENT_METHODS = { TC: 'Tarjeta de Crédito', DEBIT: 'Débito' };
 const Storage = {
   savePayments: (userId: string, payments: any[]) => localStorage.setItem(`payments_${userId}`, JSON.stringify(payments)),
   getPayments: (userId: string) => JSON.parse(localStorage.getItem(`payments_${userId}`) || '[]'),
-  saveUser: (user) => localStorage.setItem('currentUser', JSON.stringify(user)),
+  saveUser: (user: string) => localStorage.setItem('currentUser', JSON.stringify(user)),
   getUser: () => JSON.parse(localStorage.getItem('currentUser') || 'null'),
   clearUser: () => localStorage.removeItem('currentUser')
 };
